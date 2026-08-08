@@ -5,6 +5,7 @@
 ## 主要规则
 
 https://github.com/SukkaW/Surge
+https://github.com/MetaCubeX/meta-rules-dat
 
 ## 搭建脚本
 
