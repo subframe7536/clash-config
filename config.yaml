@@ -1,0 +1,809 @@
+# =========================
+# 手动节点（可选）
+# =========================
+proxies: [] # 在此粘贴你的节点，格式示例：
+
+#   - name: 节点名称
+#     type: vless
+#     server: xxx
+#     ...
+
+# =========================
+# 订阅链接（填入后自动拉取节点）
+# =========================
+# 把 url 替换成你的 Clash 订阅链接，不用的订阅保持不变即可
+proxy-providers:
+  SUB_1:
+    type: http
+    url: "<SUB_1_URL>"
+    path: ./<SUB_1_NAME>.yaml
+    interval: 21600
+    health-check:
+      enable: false
+      url: "https://www.gstatic.com/generate_204"
+      interval: 300
+      lazy: true
+  SUB_2:
+    type: http
+    url: "<SUB_2_URL>"
+    path: ./<SUB_2_NAME>.yaml
+    interval: 21600
+    health-check:
+      enable: false
+      url: "https://www.gstatic.com/generate_204"
+      interval: 300
+      lazy: true
+  SUB_3:
+    type: http
+    url: "<SUB_3_URL>"
+    path: ./<SUB_3_NAME>.yaml
+    interval: 21600
+    health-check:
+      enable: false
+      url: "https://www.gstatic.com/generate_204"
+      interval: 300
+      lazy: true
+
+# =========================
+# 分流规则
+# =========================
+# 注意：分流规则按自上而下、首次命中即停的原则匹配
+rules:
+  # 个人手写规则（最高优先级）
+  - DOMAIN-KEYWORD,canva,😭 需要翻墙
+  - DOMAIN-SUFFIX,qq.com,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,133909.best,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,subf.dev,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,rebang.today,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,grep.app,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,alma.now,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,fcapp.run,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,paypal.com,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,qaq.al,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,aigm99.cn,❤️ 无需翻墙
+  - DOMAIN-KEYWORD,aliyun,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,lmarena.ai,💬 AI 服务
+  - DOMAIN-SUFFIX,grokipedia.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,wikipedia.org,😭 需要翻墙
+  - DOMAIN-SUFFIX,linux.do,😭 需要翻墙
+  - DOMAIN-SUFFIX,v2ex.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,greasyfork.org,😭 需要翻墙
+  - DOMAIN-SUFFIX,civitai.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,typora.io,😭 需要翻墙
+  - DOMAIN-SUFFIX,iwara.tv,😭 需要翻墙
+  - DOMAIN-SUFFIX,ycombinator.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,tunnels.api.visualstudio.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,pixiv.net,😭 需要翻墙
+  # 游戏
+  - DOMAIN-KEYWORD,game,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,vlinkcloud.cn,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,myqcloud.com,❤️ 无需翻墙
+  # 公益站
+  - DOMAIN-SUFFIX,sorai.me,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,oaifree.com,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,muyuan.do,❤️ 无需翻墙
+  # 中转站
+  - DOMAIN-SUFFIX,fastaitoken.com,❤️ 无需翻墙
+  # Bluesky
+  - DOMAIN-SUFFIX,bsky.app,😭 需要翻墙
+  - DOMAIN-SUFFIX,bsky.social,😭 需要翻墙
+  - DOMAIN-SUFFIX,bsky.network,😭 需要翻墙
+  # Bilibili
+  - DOMAIN-SUFFIX,hdslb.com,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,bilibili.com,❤️ 无需翻墙
+  - DOMAIN-SUFFIX,bilivideo.com,❤️ 无需翻墙
+  # Vercel
+  - DOMAIN-SUFFIX,turborepo.org,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel-analytics.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel-dns.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel-insights.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel-status.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.app,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.blog,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.events,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.link,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.live,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.pub,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.sh,😭 需要翻墙
+  - DOMAIN-SUFFIX,vercel.store,😭 需要翻墙
+  # Reddit
+  - DOMAIN-SUFFIX,redd.it,😭 需要翻墙
+  - DOMAIN-SUFFIX,reddit.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,redditmedia.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,redditstatic.com,😭 需要翻墙
+  # Discord
+  - DOMAIN-SUFFIX,discord.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,discord.gg,😭 需要翻墙
+  - DOMAIN-SUFFIX,discord.media,😭 需要翻墙
+  - DOMAIN-SUFFIX,discordapp.com,😭 需要翻墙
+  - DOMAIN-SUFFIX,discordapp.net,😭 需要翻墙
+  - DOMAIN-SUFFIX,discordstatus.com,😭 需要翻墙
+  # SukkaLab / ruleset.skk.moe（第二优先级：Domain / Non-IP 在前，IP 在后）
+  - RULE-SET,sukka-reject-non-ip-drop,REJECT-DROP
+  - RULE-SET,sukka-reject-domainset,🛑 广告拦截
+  - RULE-SET,sukka-reject-non-ip,🛑 广告拦截
+  - RULE-SET,sukka-reject-non-ip-no-drop,🛑 广告拦截
+  - RULE-SET,sukka-lan-non-ip,DIRECT
+  - RULE-SET,sukka-apple-cn-non-ip,DIRECT
+  - RULE-SET,sukka-domestic-non-ip,❤️ 无需翻墙
+  - RULE-SET,sukka-direct-non-ip,❤️ 无需翻墙
+  - RULE-SET,sukka-ai-non-ip,💬 AI 服务
+  - RULE-SET,sukka-apple-intelligence-non-ip,💬 AI 服务
+  - RULE-SET,sukka-telegram-non-ip,📲 电报消息
+  - RULE-SET,sukka-stream-non-ip,🎬 流媒体
+  - RULE-SET,sukka-apple-cdn,🍏 苹果服务
+  - RULE-SET,sukka-apple-services,🍏 苹果服务
+  - RULE-SET,sukka-gitlab-non-ip,🐱 Github
+  - RULE-SET,sukka-microsoft-cdn-non-ip,Ⓜ️ 微软服务
+  - RULE-SET,sukka-microsoft-non-ip,Ⓜ️ 微软服务
+  - RULE-SET,sukka-reject-ip,🛑 广告拦截
+  - RULE-SET,sukka-lan-ip,DIRECT
+  - RULE-SET,sukka-ai-ip,💬 AI 服务
+  - RULE-SET,sukka-telegram-ip,📲 电报消息
+  - RULE-SET,sukka-stream-ip,🎬 流媒体
+  - RULE-SET,sukka-domestic-ip,❤️ 无需翻墙
+  - RULE-SET,sukka-china-ip,❤️ 无需翻墙
+  # 个人 Rule Providers（最后补充，仅保留 Sukka 未等价覆盖的分类）
+  - RULE-SET,coursera,📚 教育资源
+  - RULE-SET,edx,📚 教育资源
+  - RULE-SET,udemy,📚 教育资源
+  - RULE-SET,khanacademy,📚 教育资源
+  - RULE-SET,category-scholar-!cn,📚 教育资源
+  - RULE-SET,google,🔍 谷歌服务
+  - RULE-SET,geolocation-cn,❤️ 无需翻墙
+  - RULE-SET,github,🐱 Github
+  - RULE-SET,facebook,🌐 社交媒体
+  - RULE-SET,instagram,🌐 社交媒体
+  - RULE-SET,twitter,🌐 社交媒体
+  - RULE-SET,linkedin,🌐 社交媒体
+  - RULE-SET,amazon,🎬 流媒体
+  - RULE-SET,steam,🎮 游戏平台
+  - RULE-SET,epicgames,🎮 游戏平台
+  - RULE-SET,ea,🎮 游戏平台
+  - RULE-SET,ubisoft,🎮 游戏平台
+  - RULE-SET,blizzard,🎮 游戏平台
+  - RULE-SET,paypal,💰 金融服务
+  - RULE-SET,visa,💰 金融服务
+  - RULE-SET,mastercard,💰 金融服务
+  - RULE-SET,stripe,💰 金融服务
+  - RULE-SET,wise,💰 金融服务
+  - RULE-SET,aws,☁️ 云服务
+  - RULE-SET,azure,☁️ 云服务
+  - RULE-SET,digitalocean,☁️ 云服务
+  - RULE-SET,heroku,☁️ 云服务
+  - RULE-SET,dropbox,☁️ 云服务
+  - RULE-SET,geolocation-!cn,❤️ 无需翻墙
+  - MATCH,🐟 漏网之鱼
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    include-all-proxies: true
+    use:
+      - SUB_1
+      - SUB_2
+      - SUB_3
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+  - name: 💬 AI 服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+    include-all-proxies: true
+    use:
+      - SUB_1
+      - SUB_2
+      - SUB_3
+  - name: 🔍 谷歌服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: ❤️ 无需翻墙
+    type: select
+    proxies:
+      - DIRECT
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: 🐱 Github
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+  - name: 🍏 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+  - name: 🌐 社交媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: 🎬 流媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: 📚 教育资源
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: ☁️ 云服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: 💰 金融服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: 😭 需要翻墙
+    type: select
+    proxies:
+      - 🚀 节点选择
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+mixed-port: 7897
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+# =========================
+# DNS配置
+# =========================
+dns:
+  enable: true
+  listen: "127.0.0.1:5335"
+  use-system-hosts: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+    - 180.76.76.76
+    - 182.254.118.118
+    - 8.8.8.8
+    - 180.184.2.2
+  nameserver:
+    - 180.76.76.76
+    - 119.29.29.29
+    - 180.184.1.1
+    - 223.5.5.5
+    - 8.8.8.8
+    - "https://223.6.6.6/dns-query#h3=true"
+    - "https://dns.alidns.com/dns-query"
+    - "https://cloudflare-dns.com/dns-query"
+    - "https://doh.pub/dns-query"
+  fallback:
+    - "https://000000.dns.nextdns.io/dns-query#h3=true"
+    - "https://dns.alidns.com/dns-query"
+    - "https://doh.pub/dns-query"
+    - "https://public.dns.iij.jp/dns-query"
+    - "https://101.101.101.101/dns-query"
+    - "https://208.67.220.220/dns-query"
+    - "tls://8.8.4.4"
+    - "tls://1.0.0.1:853"
+    - "https://cloudflare-dns.com/dns-query"
+    - "https://dns.google/dns-query"
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+      - 127.0.0.1/32
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.twitter.com
+      - +.youtube.com
+      - +.xn--ngstr-lra8j.com
+      - +.google.cn
+      - +.googleapis.cn
+      - +.googleapis.com
+      - +.gvt1.com
+  fake-ip-filter:
+    - "*.subf.dev"
+    - "*.lan"
+    - "stun.*.*.*"
+    - "stun.*.*"
+    - time.windows.com
+    - time.nist.gov
+    - time.apple.com
+    - time.asia.apple.com
+    - "*.ntp.org.cn"
+    - "*.openwrt.pool.ntp.org"
+    - time1.cloud.tencent.com
+    - time.ustc.edu.cn
+    - pool.ntp.org
+    - ntp.ubuntu.com
+    - ntp.aliyun.com
+    - ntp1.aliyun.com
+    - ntp2.aliyun.com
+    - ntp3.aliyun.com
+    - ntp4.aliyun.com
+    - ntp5.aliyun.com
+    - ntp6.aliyun.com
+    - ntp7.aliyun.com
+    - time1.aliyun.com
+    - time2.aliyun.com
+    - time3.aliyun.com
+    - time4.aliyun.com
+    - time5.aliyun.com
+    - time6.aliyun.com
+    - time7.aliyun.com
+    - "*.time.edu.cn"
+    - time1.apple.com
+    - time2.apple.com
+    - time3.apple.com
+    - time4.apple.com
+    - time5.apple.com
+    - time6.apple.com
+    - time7.apple.com
+    - time1.google.com
+    - time2.google.com
+    - time3.google.com
+    - time4.google.com
+    - music.163.com
+    - "*.music.163.com"
+    - "*.126.net"
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - "*.kuwo.cn"
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - "*.y.qq.com"
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - music.migu.cn
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - localhost.ptlogin2.qq.com
+    - "*.*.*.srv.nintendo.net"
+    - "*.*.stun.playstation.net"
+    - "xbox.*.*.microsoft.com"
+    - "*.ipv6.microsoft.com"
+    - "*.*.xboxlive.com"
+    - speedtest.cros.wr.pvp.net
+
+# =========================
+# 配置文件管理
+# =========================
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+# =========================
+# 域名/流量嗅探
+# =========================
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  sniff:
+    TLS:
+      ports:
+        - 443
+        - 8443
+    HTTP:
+      ports:
+        - 80
+        - 8080-8880
+      override-destination: true
+
+# =========================
+# Geo 数据获取
+# =========================
+geodata-mode: true
+geo-auto-update: true
+geodata-loader: standard
+geo-update-interval: 24
+geox-url:
+  geoip: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat
+  geosite: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
+
+# =========================
+# 规则集获取
+# Sukka GitHub 构建产物优先，个人 MetaCubeX 规则补充
+# =========================
+rule-providers:
+  # =========================
+  # SukkaW/Surge (Mihomo)
+  # GitHub raw 构建产物；每 12 小时更新
+  # =========================
+  # Sukka rulesets：直接下载 SukkaLab/ruleset.skk.moe master 分支的 Clash 构建产物
+  sukka-reject-non-ip-drop:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/reject-drop.txt
+    path: ./ruleset/sukka/reject-non-ip-drop.txt
+  sukka-reject-domainset:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/domainset/reject.txt
+    path: ./ruleset/sukka/reject-domainset.txt
+  sukka-reject-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/reject.txt
+    path: ./ruleset/sukka/reject-non-ip.txt
+  sukka-reject-non-ip-no-drop:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/reject-no-drop.txt
+    path: ./ruleset/sukka/reject-non-ip-no-drop.txt
+  sukka-reject-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/ip/reject.txt
+    path: ./ruleset/sukka/reject-ip.txt
+  sukka-ai-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/ai.txt
+    path: ./ruleset/sukka/ai-non-ip.txt
+  sukka-apple-intelligence-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/apple_intelligence.txt
+    path: ./ruleset/sukka/apple-intelligence-non-ip.txt
+  sukka-ai-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/ip/ai.txt
+    path: ./ruleset/sukka/ai-ip.txt
+  sukka-telegram-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/telegram.txt
+    path: ./ruleset/sukka/telegram-non-ip.txt
+  sukka-telegram-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/ip/telegram.txt
+    path: ./ruleset/sukka/telegram-ip.txt
+  sukka-stream-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/stream.txt
+    path: ./ruleset/sukka/stream-non-ip.txt
+  sukka-stream-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/ip/stream.txt
+    path: ./ruleset/sukka/stream-ip.txt
+  sukka-apple-cdn:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/domainset/apple_cdn.txt
+    path: ./ruleset/sukka/apple-cdn.txt
+  sukka-apple-services:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/apple_services.txt
+    path: ./ruleset/sukka/apple-services.txt
+  sukka-apple-cn-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/apple_cn.txt
+    path: ./ruleset/sukka/apple-cn-non-ip.txt
+  sukka-microsoft-cdn-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/microsoft_cdn.txt
+    path: ./ruleset/sukka/microsoft-cdn-non-ip.txt
+  sukka-microsoft-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/microsoft.txt
+    path: ./ruleset/sukka/microsoft-non-ip.txt
+  sukka-gitlab-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/gitlab.txt
+    path: ./ruleset/sukka/gitlab-non-ip.txt
+  sukka-lan-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/lan.txt
+    path: ./ruleset/sukka/lan-non-ip.txt
+  sukka-lan-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/ip/lan.txt
+    path: ./ruleset/sukka/lan-ip.txt
+  sukka-domestic-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/domestic.txt
+    path: ./ruleset/sukka/domestic-non-ip.txt
+  sukka-direct-non-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/non_ip/direct.txt
+    path: ./ruleset/sukka/direct-non-ip.txt
+  sukka-domestic-ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/ip/domestic.txt
+    path: ./ruleset/sukka/domestic-ip.txt
+  sukka-china-ip:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/SukkaLab/ruleset.skk.moe/master/Clash/ip/china_ip.txt
+    path: ./ruleset/sukka/china-ip.txt
+  # 个人 MetaCubeX rulesets：仅保留 Sukka 未等价覆盖的补充规则
+  coursera:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/coursera.mrs"
+    path: ./ruleset/coursera.mrs
+    interval: 86400
+  edx:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/edx.mrs"
+    path: ./ruleset/edx.mrs
+    interval: 86400
+  udemy:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/udemy.mrs"
+    path: ./ruleset/udemy.mrs
+    interval: 86400
+  khanacademy:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/khanacademy.mrs"
+    path: ./ruleset/khanacademy.mrs
+    interval: 86400
+  category-scholar-!cn:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-scholar-!cn.mrs"
+    path: ./ruleset/category-scholar-!cn.mrs
+    interval: 86400
+  google:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs"
+    path: ./ruleset/google.mrs
+    interval: 86400
+  geolocation-cn:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-cn.mrs"
+    path: ./ruleset/geolocation-cn.mrs
+    interval: 86400
+  github:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"
+    path: ./ruleset/github.mrs
+    interval: 86400
+  facebook:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/facebook.mrs"
+    path: ./ruleset/facebook.mrs
+    interval: 86400
+  instagram:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/instagram.mrs"
+    path: ./ruleset/instagram.mrs
+    interval: 86400
+  twitter:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitter.mrs"
+    path: ./ruleset/twitter.mrs
+    interval: 86400
+  linkedin:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/linkedin.mrs"
+    path: ./ruleset/linkedin.mrs
+    interval: 86400
+  amazon:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/amazon.mrs"
+    path: ./ruleset/amazon.mrs
+    interval: 86400
+  steam:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"
+    path: ./ruleset/steam.mrs
+    interval: 86400
+  epicgames:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/epicgames.mrs"
+    path: ./ruleset/epicgames.mrs
+    interval: 86400
+  ea:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ea.mrs"
+    path: ./ruleset/ea.mrs
+    interval: 86400
+  ubisoft:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/ubisoft.mrs"
+    path: ./ruleset/ubisoft.mrs
+    interval: 86400
+  blizzard:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/blizzard.mrs"
+    path: ./ruleset/blizzard.mrs
+    interval: 86400
+  paypal:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/paypal.mrs"
+    path: ./ruleset/paypal.mrs
+    interval: 86400
+  visa:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/visa.mrs"
+    path: ./ruleset/visa.mrs
+    interval: 86400
+  mastercard:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/mastercard.mrs"
+    path: ./ruleset/mastercard.mrs
+    interval: 86400
+  stripe:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/stripe.mrs"
+    path: ./ruleset/stripe.mrs
+    interval: 86400
+  wise:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/wise.mrs"
+    path: ./ruleset/wise.mrs
+    interval: 86400
+  aws:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/aws.mrs"
+    path: ./ruleset/aws.mrs
+    interval: 86400
+  azure:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/azure.mrs"
+    path: ./ruleset/azure.mrs
+    interval: 86400
+  digitalocean:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/digitalocean.mrs"
+    path: ./ruleset/digitalocean.mrs
+    interval: 86400
+  heroku:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/heroku.mrs"
+    path: ./ruleset/heroku.mrs
+    interval: 86400
+  dropbox:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/dropbox.mrs"
+    path: ./ruleset/dropbox.mrs
+    interval: 86400
+  geolocation-!cn:
+    type: http
+    format: mrs
+    behavior: domain
+    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"
+    path: ./ruleset/geolocation-!cn.mrs
+    interval: 86400
