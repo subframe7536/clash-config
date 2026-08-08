@@ -13,6 +13,16 @@ proxies: [] # 在此粘贴你的节点，格式示例：
 # =========================
 # 把 url 替换成你的 Clash 订阅链接，不用的订阅保持不变即可
 proxy-providers:
+  SUB:
+    type: http
+    url: "<SUB_DEFAULT_URL>"
+    path: ./sub.yaml
+    interval: 21600
+    health-check:
+      enable: false
+      url: "https://www.gstatic.com/generate_204"
+      interval: 300
+      lazy: true
   SUB_1:
     type: http
     url: "<SUB_1_URL>"
@@ -180,6 +190,7 @@ proxy-groups:
     type: select
     include-all-proxies: true
     use:
+      - SUB
       - SUB_1
       - SUB_2
       - SUB_3
@@ -193,6 +204,7 @@ proxy-groups:
       - 🚀 节点选择
     include-all-proxies: true
     use:
+      - SUB
       - SUB_1
       - SUB_2
       - SUB_3
