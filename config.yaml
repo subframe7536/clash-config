@@ -23,36 +23,7 @@ proxy-providers:
       url: "https://www.gstatic.com/generate_204"
       interval: 300
       lazy: true
-  SUB_1:
-    type: http
-    url: "<SUB_1_URL>"
-    path: ./<SUB_1_NAME>.yaml
-    interval: 21600
-    health-check:
-      enable: false
-      url: "https://www.gstatic.com/generate_204"
-      interval: 300
-      lazy: true
-  SUB_2:
-    type: http
-    url: "<SUB_2_URL>"
-    path: ./<SUB_2_NAME>.yaml
-    interval: 21600
-    health-check:
-      enable: false
-      url: "https://www.gstatic.com/generate_204"
-      interval: 300
-      lazy: true
-  SUB_3:
-    type: http
-    url: "<SUB_3_URL>"
-    path: ./<SUB_3_NAME>.yaml
-    interval: 21600
-    health-check:
-      enable: false
-      url: "https://www.gstatic.com/generate_204"
-      interval: 300
-      lazy: true
+  # <SUB_PROVIDERS>
 
 # =========================
 # 分流规则
@@ -191,9 +162,7 @@ proxy-groups:
     include-all-proxies: true
     use:
       - SUB
-      - SUB_1
-      - SUB_2
-      - SUB_3
+      # <SUB_PROVIDER_NAMES>
   - name: 🛑 广告拦截
     type: select
     proxies:
@@ -205,9 +174,7 @@ proxy-groups:
     include-all-proxies: true
     use:
       - SUB
-      - SUB_1
-      - SUB_2
-      - SUB_3
+      # <SUB_PROVIDER_NAMES>
   - name: 🔍 谷歌服务
     type: select
     proxies:
