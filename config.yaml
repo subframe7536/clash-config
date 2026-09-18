@@ -54,7 +54,7 @@ rules:
   - DOMAIN-SUFFIX,iwara.tv,😭 需要翻墙
   - DOMAIN-SUFFIX,ycombinator.com,😭 需要翻墙
   - DOMAIN-SUFFIX,tunnels.api.visualstudio.com,😭 需要翻墙
-  - DOMAIN-SUFFIX,pixiv.net,😭 需要翻墙
+  - RULE-SET,pixiv,😭 需要翻墙
   # 游戏
   - DOMAIN-KEYWORD,game,❤️ 无需翻墙
   - DOMAIN-SUFFIX,vlinkcloud.cn,❤️ 无需翻墙
@@ -409,6 +409,14 @@ geox-url:
 # Sukka GitHub 构建产物优先，个人 MetaCubeX 规则补充
 # =========================
 rule-providers:
+  # Blackmatrix7
+  pixiv:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pixiv/Pixiv_No_Resolve.yaml
+    path: ./ruleset/pixiv.yaml
   # =========================
   # SukkaW/Surge (Mihomo)
   # GitHub raw 构建产物；每 12 小时更新
