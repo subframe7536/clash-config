@@ -44,6 +44,7 @@ rules:
   - DOMAIN-SUFFIX,aigm99.cn,❤️ 无需翻墙
   - DOMAIN-KEYWORD,aliyun,❤️ 无需翻墙
   - DOMAIN-SUFFIX,lmarena.ai,💬 AI 服务
+  - RULE-SET,huggingface,💬 AI 服务
   - DOMAIN-SUFFIX,grokipedia.com,😭 需要翻墙
   - DOMAIN-SUFFIX,wikipedia.org,😭 需要翻墙
   - DOMAIN-SUFFIX,linux.do,😭 需要翻墙
@@ -417,6 +418,14 @@ rule-providers:
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pixiv/Pixiv_No_Resolve.yaml
     path: ./ruleset/pixiv.yaml
+  # VPSDance/ai-proxy-rules
+  huggingface:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/clash/huggingface.yaml
+    path: ./ruleset/huggingface.yaml
   # =========================
   # SukkaW/Surge (Mihomo)
   # GitHub raw 构建产物；每 12 小时更新
