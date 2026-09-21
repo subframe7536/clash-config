@@ -70,6 +70,10 @@ rules:
   - DOMAIN-SUFFIX,bsky.app,😭 需要翻墙
   - DOMAIN-SUFFIX,bsky.social,😭 需要翻墙
   - DOMAIN-SUFFIX,bsky.network,😭 需要翻墙
+  # Bangumi番组计划
+  - DOMAIN-SUFFIX,bgm.tv,😭 需要翻墙
+  - DOMAIN-SUFFIX,chii.in,😭 需要翻墙
+  - DOMAIN-SUFFIX,bangumi.tv,😭 需要翻墙
   # Bilibili
   - DOMAIN-SUFFIX,hdslb.com,❤️ 无需翻墙
   - DOMAIN-SUFFIX,bilibili.com,❤️ 无需翻墙
