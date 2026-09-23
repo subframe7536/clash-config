@@ -140,6 +140,7 @@ rules:
   - RULE-SET,geolocation-cn,❤️ 无需翻墙
   - RULE-SET,github,🐱 Github
   - RULE-SET,facebook,🌐 社交媒体
+  - RULE-SET,facebook-semporia,🌐 社交媒体
   - RULE-SET,instagram,🌐 社交媒体
   - RULE-SET,twitter,🌐 社交媒体
   - RULE-SET,linkedin,🌐 社交媒体
@@ -430,6 +431,14 @@ rule-providers:
     interval: 86400
     url: https://raw.githubusercontent.com/VPSDance/ai-proxy-rules/main/rules/clash/huggingface.yaml
     path: ./ruleset/huggingface.yaml
+  # Semporia/Clash
+  facebook-semporia:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/Semporia/Clash/master/Rule/Facebook.yaml
+    path: ./ruleset/facebook-semporia.yaml
   # =========================
   # SukkaW/Surge (Mihomo)
   # GitHub raw 构建产物；每 12 小时更新
