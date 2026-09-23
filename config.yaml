@@ -139,7 +139,6 @@ rules:
   - RULE-SET,google,🔍 谷歌服务
   - RULE-SET,geolocation-cn,❤️ 无需翻墙
   - RULE-SET,github,🐱 Github
-  - RULE-SET,facebook,🌐 社交媒体
   - RULE-SET,facebook-semporia,🌐 社交媒体
   - RULE-SET,instagram,🌐 社交媒体
   - RULE-SET,twitter,🌐 社交媒体
@@ -668,13 +667,6 @@ rule-providers:
     behavior: domain
     url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs"
     path: ./ruleset/github.mrs
-    interval: 86400
-  facebook:
-    type: http
-    format: mrs
-    behavior: domain
-    url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/facebook.mrs"
-    path: ./ruleset/facebook.mrs
     interval: 86400
   instagram:
     type: http
