@@ -160,7 +160,7 @@ rules:
   - RULE-SET,digitalocean,☁️ 云服务
   - RULE-SET,heroku,☁️ 云服务
   - RULE-SET,dropbox,☁️ 云服务
-  - RULE-SET,geolocation-!cn,❤️ 无需翻墙
+  - RULE-SET,geolocation-!cn,😭 需要翻墙
   - MATCH,🐟 漏网之鱼
 proxy-groups:
   - name: 🚀 节点选择
